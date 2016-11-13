@@ -1,0 +1,16 @@
+{% extends 'core/main.html' %} 
+{% block content %}
+<div style="width:100%; height:100%;">
+<h1>Login</h1>
+<form method="POST" action="{% url 'login' %}" style="margin:auto auto auto auto; display:block; width:200px; height:200px;">
+  {% csrf_token %}
+  Username :<br>
+  <input type="text" name="username" value="" size="50"><br>
+  Password :<br>
+  <input type="text" name="password" value="" size="50"><br><br>
+  <input type="submit" value="submit">
+  <br>
+ </form>
+  <br>Not registered? Click<a href="{% url 'sign_up' %}"> Here</a>
+</div>
+{% endblock %}

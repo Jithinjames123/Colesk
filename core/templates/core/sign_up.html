@@ -1,0 +1,16 @@
+{% extends 'core/main.html' %}
+{% block content %}
+
+<h1>Registered</h1>
+{% if registered %}
+<a href="{% url 'main_page' %}"></a>
+{% else %}
+<form id="user_form" method="POST">
+{% csrf_token %}
+{{ user_form.as_p }}
+{{ profile_form.as_p }}	
+  <input type="submit" value="submit">
+
+</form>
+{% endif %}
+{% endblock %}
